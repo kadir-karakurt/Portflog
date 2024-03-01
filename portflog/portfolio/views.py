@@ -5,13 +5,10 @@ from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse('<h2>Home</h2>')
+    return render(request, 'portfolio/portfolio.html')
 
-def posts(request):
+def about(request):
     return HttpResponse('<h2>Posts</h2>')
-
-def post(request):
-    return HttpResponse('<h2>Post Title</h2>')
 
 def profile(request):
     return HttpResponse('<h2>User Profile</h2>')
