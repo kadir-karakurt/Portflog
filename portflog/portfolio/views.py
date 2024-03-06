@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'portfolio.html')
+    return render(request, 'portfolio/portfolio.html')
 
 def about(request):
     return HttpResponse('<h2>Posts</h2>')

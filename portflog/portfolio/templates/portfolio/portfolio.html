@@ -5,7 +5,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta name="description" content="">
         <meta name="author" content="TemplateMo">
 
@@ -21,7 +20,7 @@
     </head>
     
     <body>
-
+    
         <section class="preloader">
             <div class="spinner">
                 <span class="spinner-rotate"></span>    
@@ -29,20 +28,18 @@
         </section>
 
         <!--navbar-->
-        {% include 'partials/_nav.html' %}
+        {% include 'portfolio/partials/_nav.html' %}
 
         <main>
 
-            {% include 'partials/_home.html' %}
-            {% include 'partials/_about.html' %}
-            {% include 'partials/_projects.html' %}
-            {% include 'partials/_contact.html' %}
-
-
+            {% include 'portfolio/partials/_home.html' %}
+            {% include 'portfolio/partials/_about.html' %}
+            {% include 'portfolio/partials/_projects.html' %}
+            {% include 'portfolio/partials/_contact.html' %}
 
         </main>
 
-        {% include 'partials/_footer.html' %}
+        {% include 'portfolio/partials/_footer.html' %}
 
         <!-- JAVASCRIPT FILES -->
         <script src="{% static 'js/jquery.min.js' %}"></script>
