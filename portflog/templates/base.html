@@ -1,7 +1,12 @@
 {% load static %}
 
-{% include 'header.html' %}
-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock  %} | Blog</title>
+{% include 'partials/_head.html' %}
+    
 {% block content %}
 
 {% endblock  %}

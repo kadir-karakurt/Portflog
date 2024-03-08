@@ -1,6 +1,6 @@
 {% load static %}
 
-{% block header %}
+{% block header_nav %}
 <header class="tm-header" id="tm-header">
         <div class="tm-header-wrapper">
             <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
@@ -16,7 +16,6 @@
                 <ul>
                     <li class="tm-nav-item active"><a href="{% url 'index' %}" class="tm-nav-link">
                         <i class="fas fa-magic"></i>
-                        {#<i class="fas fa-long-arrow-alt-right"></i>#}
                         Blog Home
                     </a></li>
                     <li class="tm-nav-item"><a href="{% url 'home' %}" class="tm-nav-link">
@@ -30,6 +29,10 @@
                     <li class="tm-nav-item"><a href="{% url 'index' %}" class="tm-nav-link">
                         <i class="fas fa-comments"></i>
                         İletisim
+                    </a></li>
+                    <li class="tm-nav-item active"><a href="{% url 'blogs' %}" class="tm-nav-link">
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                        Blogs
                     </a></li>
                 </ul> 
             </nav>

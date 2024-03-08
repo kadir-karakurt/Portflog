@@ -1,9 +1,11 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 {% load static %}
+
+{% block title %}Post{% endblock  %}
 
 {% block content %}
 <body>
-	{% include 'blog/partials/_header.html' %}<!--navbar in-->
+	{% include 'blog/partials/_header_navbar.html' %}<!--navbar in-->
 
     <div class="container-fluid">
         <main class="tm-main">
