@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from blog.models import Blog
 
 # Create your views here.
 data = {
@@ -36,29 +37,20 @@ data = {
 
 def index(request):
     context = {
-        "blogs": data["blogs"]
+        "blogs": Blog.objects.filter(is_active=True, is_home=True)
     }
     return render(request, "blog/index.html", context)
 
 def blogs(request):
     context = {
-        "blogs": data["blogs"]
+        "blogs": Blog.objects.filter(is_active=True)
     }
     return render(request, "blog/blogs.html", context)
 
-def details(request, id):
-    # blogs = data["blogs"]
-    # selectedBlog = None
-
-    # for blog in blogs:
-    #     if blog["id"] == id:
-    #         selectedBlog = blog
-    blogs = data["blogs"]
-
-    selectedBlog = [blog for blog in blogs if blog["id"]==id][0]
-
+def details(request, slug):
+    blog = Blog.objects.get(slug=slug)
     return render(request, "blog/details.html", {
-        "blog": selectedBlog
+        "blog": blog
     })
 
 def post(request):

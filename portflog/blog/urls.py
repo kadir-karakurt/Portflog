@@ -13,5 +13,5 @@ urlpatterns = [
     path('index',views.index),
     path('blogs',views.blogs, name='blogs'),
     path('post', views.post,name='post'),
-    path('blogs/<int:id>', views.details, name="blog_details"),
+    path('blogs/<slug:slug>', views.details, name="blog_details"),
 ]

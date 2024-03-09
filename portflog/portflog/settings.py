@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'portfolio.apps.PortfolioConfig'
+    'portfolio.apps.PortfolioConfig',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+MEDIA_ROOT = BASE_DIR / "uploads"
+MEDIA_URL = "/images/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
