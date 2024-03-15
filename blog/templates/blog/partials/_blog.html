@@ -9,7 +9,7 @@
         <h2  class="tm-pt-30 tm-color-primary tm-post-title">{{ blog.title }}</h2>
     </a>                    
     <p class="tm-pt-30">
-        {{ blog.description|slice:"260"|add:"..." }}
+        {{ blog.description|striptags|slice:"50"|add:"..." }}
     </p>
     <div class="d-flex justify-content-between tm-pt-45">
         <span class="tm-color-primary">Travel . Events</span>

@@ -10,7 +10,7 @@
     
     <div class="container-fluid">
         <main class="tm-main">
-            <!-- Search form -->
+            <!-- Search form start -->
             <div class="row tm-row">
                 <div class="col-12">
                     <form method="GET" class="form-inline tm-mb-80 tm-search-form">                
@@ -20,15 +20,17 @@
                         </button>                                
                     </form>
                 </div>                
-            </div>            
+            </div>
+            <!-- Search form stop -->   
+                    
             <div class="row tm-row">
             {% for blog in blogs %}
                 {% if blog.is_home and blog.is_active%}
                     {% include 'blog/partials/_blog.html' %}
                 {% endif %}
             {% endfor %}
-                
             </div>
+
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
                     <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Geri</a>
