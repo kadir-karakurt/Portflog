@@ -11,8 +11,8 @@ from . import views
 urlpatterns = [
     path('',views.index,name='index'),
     path('index',views.index),
-    path('blogs',views.blogs, name='blogs'),
     path('category/<slug:slug>', views.blogs_by_category, name="blogs_by_category"),
     path('post', views.post,name='post'),
-    path('blogs/<slug:slug>', views.details, name="blog_details"),
+    path('details/<slug:slug>', views.details, name="blog_details"),
+    path('search', views.search_blogs, name="search_blogs"),
 ]

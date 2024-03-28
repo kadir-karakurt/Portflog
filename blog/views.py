@@ -6,18 +6,24 @@ from blog.models import Blog, Category
 # Create your views here. 
 
 def index(request):
-    context = {
-        "blogs": Blog.objects.filter(is_active=True, is_home=True),
-        "categories": Category.objects.all()
-    }
-    return render(request, "blog/index.html", context)
+    # Arama terimi (q) var mı kontrol ediyoruz
+    if 'q' in request.GET:
+        q = request.GET.get('q')
+        # Başlıkta arama yapıp ilgili blogları filtreliyoruz
+        blogs = Blog.objects.filter(title__icontains=q)
+        context = {
+            "blogs": blogs,
+            "categories": Category.objects.all()
+        }
+        return render(request, "blog/search_results.html", context)
+    else:
+        # Arama terimi yoksa tüm blogları ve kategorileri getiriyoruz
+        context = {
+            "blogs": Blog.objects.filter(is_active=True, is_home=True),
+            "categories": Category.objects.all()
+        }
+        return render(request, "blog/index.html", context)
 
-def blogs(request):
-    context = {
-        "blogs": Blog.objects.filter(is_active=True),
-        "categories": Category.objects.all()
-    }
-    return render(request, "blog/blogs.html", context)
 
 def details(request, slug):
     blog = Blog.objects.get(slug=slug)
@@ -36,4 +42,23 @@ def blogs_by_category(request, slug):
         "categories": Category.objects.all(),
         "selected_category": slug
     }
-    return render(request, "blog/blogs.html", context)
+    return render(request, "blog/index.html", context)
+
+def search_blogs(request):
+    # Arama terimi (q) var mı kontrol ediyoruz
+    if 'q' in request.GET:
+        q = request.GET.get('q')
+        # Başlıkta arama yapıp ilgili blogları filtreliyoruz
+        blogs = Blog.objects.filter(title__icontains=q,description__icontains=q)
+        context = {
+            "blogs": blogs,
+            "categories": Category.objects.all()
+        }
+        return render(request, "blog/search.html", context)
+    else:
+        # Arama terimi yoksa tüm blogları ve kategorileri getiriyoruz
+        context = {
+            "blogs": Blog.objects.filter(is_active=True, is_home=True),
+            "categories": Category.objects.all()
+        }
+        return render(request, "blog/index.html", context)
