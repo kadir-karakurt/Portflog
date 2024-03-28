@@ -14,7 +14,7 @@ class BlogAdmin(admin.ModelAdmin):
         html = "<ul>"
 
         for category in obj.categories.all():
-            htm += "<li>" + category.name + "</li>"
+            html += "<li>" + category.name + "</li>"
         
         html +="</ul>"
         return mark_safe(html)
