@@ -75,7 +75,7 @@ def search_blogs(request):
     
     return render(request, 'blog/add_blog.html', {'form': form, 'categories': Category.objects.all()})
 '''
-@login_required
+@login_required # Disallow adding a blog without admin login
 def add_blog(request):
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)

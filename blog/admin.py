@@ -26,3 +26,8 @@ admin.site.register(Category)
 # Username => admin
 # E-Posta => info@admin.com
 # Password => admin1313
+
+# Username => moderator
+# E-Posta => info@moderator.com
+# Password => mod123
+
