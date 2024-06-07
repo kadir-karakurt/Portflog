@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block content %}
+<body>
+    {% include 'blog/partials/_header_navbar.html' %}
+    <div class="container-fluid">
+        <main class="tm-main">
+            <!-- Search form start -->
+            {% include 'blog/partials/_search.html' %}
+            <!-- Search form stop -->
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-md-9 blog-main">
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+
+                                <!-- blog start -->
+                                <div class="row tm-row">
+                                    {% if blogs %}
+                                        {% for blog in blogs %}
+                                            {% if blog.is_active %}
+                                                {% include 'blog/partials/_blog.html' %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <div class="alert alert-warning">No Blogs found for query "{{ query }}"</div>
+                                    {% endif %}
+                                </div>
+                                <!-- blog end -->
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="col-md-3 blog-sidebar">
+                        <h2 class="font-italic text-center">Categories</h2>
+                        <hr class="tm-hr-primary" />
+                        <h4 class="font-italic text-center">
+                            {% include 'blog/partials/_categories.html' %}
+                        </h4>
+                    </aside>  
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+{% endblock %}

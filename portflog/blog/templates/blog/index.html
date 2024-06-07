@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+{% block title %}
+Blogs
+{% endblock  %}
+
+{% block content %}
+<body>
+    {% include 'blog/partials/_header_navbar.html' %}
+    
+    <div class="container-fluid">
+        <main class="tm-main">
+            <!-- Search form start -->
+            {% include 'blog/partials/_search.html' %}
+            <!-- Search form stop -->
+            <div class="container">
+                <div class="row mb-2">
+                    <div class="col-md-9 blog-main">
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+
+                                <!-- blog start -->
+                                <div class="row tm-row">
+                                    {% if blogs|length > 0 %}
+                                        {% for blog in blogs %}
+                                            {% if blog.is_active %}
+                                                {% include 'blog/partials/_blog.html' %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <div class="alert alert-warning">No Blogs</div>
+                                    {% endif %}
+                                </div>
+                                <!-- blog start -->
+
+                                <div class="row tm-row tm-mt-100 tm-mb-75">
+
+                                    <!-- İleri Geri -->
+                                    <div class="tm-prev-next-wrapper">
+                                        <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Geri</a>
+                                        <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next">İleri</a>
+                                    </div>
+                                    <!-- İleri Geri -->
+
+                                    <!-- Sayfa numarası seçme -->
+                                    <div class="tm-paging-wrapper">
+                                        <nav class="tm-paging-nav d-inline-block">
+                                            <ul>
+                                                <li class="tm-paging-item active">
+                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">1</a>
+                                                </li>
+                                                <li class="tm-paging-item">
+                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">2</a>
+                                                </li>
+                                                <li class="tm-paging-item">
+                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">3</a>
+                                                </li>
+                                                <li class="tm-paging-item">
+                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">4</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Sayfa numarası seçme -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="col-md-3 blog-sidebar">
+                        <h2 class="font-italic text-center">Kategoriler</h2>
+                        <hr class="tm-hr-primary" />
+                        <h4 class="font-italic text-center">
+                        {% include 'blog/partials/_categories.html' %}
+                        </h4>
+                    </aside>  
+            </div>
+              
+{% endblock  %}            

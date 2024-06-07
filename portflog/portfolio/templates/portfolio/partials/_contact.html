@@ -1,0 +1,157 @@
+{% load static  %}
+
+<section class="contact section-padding" id="section_4">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-lg-6 col-md-8 col-12">
+                                <div class="section-title-wrap d-flex justify-content-center align-items-center mb-5">
+                                    <img src="{% static 'img/aerial-view-man-using-computer-laptop-wooden-table.jpg' %}" class="avatar-image img-fluid" alt="">
+
+                                    <h2 class="text-white ms-4 mb-0">Say Hi</h2>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-lg-3 col-md-6 col-12 pe-lg-0">
+                                <div class="contact-info contact-info-border-start d-flex flex-column">
+                                    <strong class="site-footer-title d-block mb-3">Services</strong>
+
+                                    <ul class="footer-menu">
+                                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Websites</a></li>
+
+                                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Branding</a></li>
+
+                                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Ecommerce</a></li>
+
+                                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">SEO</a></li>
+                                    </ul>
+
+                                    <strong class="site-footer-title d-block mt-4 mb-3">Bağlantıda Kalın</strong>
+
+                                    <ul class="social-icon">
+                                        <li class="social-icon-item"><a href="https://github.com/misalkadir" class="social-icon-link bi-github"></a></li>
+
+                                        <li class="social-icon-item"><a href="https://www.instagram.com/" class="social-icon-link bi-instagram"></a></li>
+
+                                        <li class="social-icon-item"><a href="https://www.linkedin.com/in/kadir-karakurt-34b754183/" class="social-icon-link bi-linkedin"></a></li>
+
+                                        <li class="social-icon-item"><a href="https://www.youtube.com/" class="social-icon-link bi-youtube"></a></li>
+                                    </ul>
+
+                                    <strong class="site-footer-title d-block mt-4 mb-3">Bir Proje Başlat</strong>
+
+                                    <p class="mb-0">Freelance projeler için müsaitim</p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-12 ps-lg-0">
+                                <div class="contact-info d-flex flex-column">
+                                    <strong class="site-footer-title d-block mb-3">Hakkımda</strong>
+
+                                    <p class="mb-2">
+                                        Python dili ile Django Web uygualama çatısını kullanarak web siteleri tasarlıyorum.
+                              </p>
+
+                                    <strong class="site-footer-title d-block mt-4 mb-3">Email</strong>
+
+                                    <p>
+                                        <a href="mailto:misalkadir@gmail.com">
+                                            misalkadir@gmail.com
+                                        </a>
+                                    </p>
+
+                                    <strong class="site-footer-title d-block mt-4 mb-3">Arama</strong>
+
+                                    <p class="mb-0">
+                                        <a href="tel: 0 505 337 28--">
+                                            0 505 337 28--
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                                <form action="#" method="get" class="custom-form contact-form" role="form">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-floating">
+                                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
+                                                
+                                                <label for="floatingInput">Name</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6 col-12"> 
+                                            <div class="form-floating">
+                                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Adresi" required="">
+                                                
+                                                <label for="floatingInput">Email address</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="form-check form-check-inline">
+                                                <input name="website" type="checkbox" class="form-check-input" id="inlineCheckbox1" value="1">
+
+                                                <label class="form-check-label" for="inlineCheckbox1">
+                                                    <i class="bi-globe form-check-icon"></i>
+                                                    <span class="form-check-label-text">Websites</span>
+                                                </label>
+                                          </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="form-check form-check-inline">
+                                                <input name="branding" type="checkbox" class="form-check-input" id="inlineCheckbox2" value="1">
+
+                                                <label class="form-check-label" for="inlineCheckbox2">
+                                                    <i class="bi-lightbulb form-check-icon"></i>
+                                                    <span class="form-check-label-text">Markalaşma</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="form-check form-check-inline">
+                                                <input name="ecommerce" type="checkbox" class="form-check-input" id="inlineCheckbox3" value="1">
+
+                                                <label class="form-check-label" for="inlineCheckbox3">
+                                                    <i class="bi-phone form-check-icon"></i>
+                                                    <span class="form-check-label-text">Ecommerce</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-md-6 col-6">
+                                            <div class="form-check form-check-inline me-0">
+                                                <input name="seo" type="checkbox" class="form-check-input" id="inlineCheckbox4" value="1">
+
+                                                <label class="form-check-label" for="inlineCheckbox4">
+                                                    <i class="bi-google form-check-icon"></i>
+                                                    <span class="form-check-label-text">SEO</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" id="message" name="message" placeholder="Bana projeden bahset"></textarea>
+                                                
+                                                <label for="floatingTextarea">Tell me about the project</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3 col-12 ms-auto">
+                                            <button type="submit" class="form-control">Send</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
