@@ -36,29 +36,26 @@ Blogs
 
                                 <div class="row tm-row tm-mt-100 tm-mb-75">
 
-                                    <!-- İleri Geri -->
-                                    <div class="tm-prev-next-wrapper">
-                                        <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Geri</a>
-                                        <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next">İleri</a>
-                                    </div>
-                                    <!-- İleri Geri -->
 
                                     <!-- Sayfa numarası seçme -->
                                     <div class="tm-paging-wrapper">
                                         <nav class="tm-paging-nav d-inline-block">
                                             <ul>
-                                                <li class="tm-paging-item active">
-                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">1</a>
-                                                </li>
+                                                {% if blogs.has_previous %}
                                                 <li class="tm-paging-item">
-                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">2</a>
+                                                    <a href="?page=1" class="mb-2 tm-btn tm-paging-link">&laquo;</a>
                                                 </li>
+                                                {% endif %}
+                                                {% for num in blogs.paginator.page_range %}
+                                                <li class="tm-paging-item {% if blogs.number == num %}active{% endif %}">
+                                                    <a href="?page={{ num }}" class="mb-2 tm-btn tm-paging-link">{{ num }}</a>
+                                                </li>
+                                                {% endfor %}
+                                                {% if blogs.has_next %}
                                                 <li class="tm-paging-item">
-                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">3</a>
+                                                    <a href="?page={{ blogs.paginator.num_pages }}" class="mb-2 tm-btn tm-paging-link">&raquo;</a>
                                                 </li>
-                                                <li class="tm-paging-item">
-                                                    <a href="#" class="mb-2 tm-btn tm-paging-link">4</a>
-                                                </li>
+                                                {% endif %}
                                             </ul>
                                         </nav>
                                     </div>

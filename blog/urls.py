@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from portfolio.views import portfolio
 
 # http://127.0.0.1:8000/            => homepage
 # http://127.0.0.1:8000/index       => homepage

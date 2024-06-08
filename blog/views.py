@@ -6,27 +6,29 @@ from django.db.models import Q
 from django.db import models
 from .forms import BlogForm
 from django.contrib.auth.decorators import login_required
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here. 
 
+
 def index(request):
-    # Arama terimi (q) var mı kontrol ediyoruz
-    if 'q' in request.GET:
-        q = request.GET.get('q')
-        # Başlıkta arama yapıp ilgili blogları filtreliyoruz
-        blogs = Blog.objects.filter(title__icontains=q)
-        context = {
-            "blogs": blogs,
-            "categories": Category.objects.all()
-        }
-        return render(request, "blog/search_results.html", context)
-    else:
-        # Arama terimi yoksa tüm blogları ve kategorileri getiriyoruz
-        context = {
-            "blogs": Blog.objects.filter(is_active=True, is_home=True),
-            "categories": Category.objects.all()
-        }
-        return render(request, "blog/index.html", context)
+    blogs_list = Blog.objects.filter(is_active=True, is_home=True)
+    paginator = Paginator(blogs_list, 4)  # Show 4 blogs per page
+
+    page = request.GET.get('page')
+    try:
+        blogs = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        blogs = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        blogs = paginator.page(paginator.num_pages)
+
+    context = {
+        "blogs": blogs,
+        "categories": Category.objects.all()
+    }
+    return render(request, "blog/index.html", context)
 
 
 def details(request, slug):
@@ -75,7 +77,7 @@ def search_blogs(request):
     
     return render(request, 'blog/add_blog.html', {'form': form, 'categories': Category.objects.all()})
 '''
-@login_required # Disallow adding a blog without admin login
+
 def add_blog(request):
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)

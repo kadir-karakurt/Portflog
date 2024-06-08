@@ -119,6 +119,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+DEFAULT_CHARSET = 'utf-8'
+
 
 
 # Password validation
