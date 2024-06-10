@@ -3,6 +3,8 @@ from .models import Blog,Category
 from django.utils.safestring import mark_safe
 
 # Register your models here.
+# Manages Blog and Category models in the admin panel, adding list and filter features. 
+# (Blog ve Kategori modellerini admin panelinde yönetir, liste ve filtreleme özellikleri ekler.)
 class BlogAdmin(admin.ModelAdmin):
     list_display = ("title","is_active","is_home","slug","selected_categories",)
     list_editable = ("is_active","is_home",)

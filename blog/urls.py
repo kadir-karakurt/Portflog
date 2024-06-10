@@ -9,6 +9,7 @@ from portfolio.views import portfolio
 # http://127.0.0.1:8000/blogs/      => blogs-details
 
 
+# Defines URL mappings for the blog application. (Blog uygulaması için URL yönlendirmeleri yapar.)
 urlpatterns = [
     path('',views.index,name='index'),
     path('',views.index,name='home'),

@@ -9,3 +9,7 @@ urlpatterns = [
     path('profile/', views.profile, name="profile"),
     
 ]
+
+# Defines URL mappings for the portfolio application. (Portfolio uygulaması için URL yönlendirmeleri yapar.)
+# URL mappings direct to specific views. (URL'ler, belirli görünümlere (views) yönlendirilir.)
+

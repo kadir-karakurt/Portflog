@@ -1,7 +1,9 @@
 from django.db import models
 
 # Create your models here.
+# Defines database tables using models. (Veritabanı tablolarını temsil eden modelleri tanımlar.)
 
+# Defines projects model. (Proje modelini tanımlar)
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -12,7 +14,8 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+# Defines user profile information model. (Kullanıcı profili bilgi modelini tanımlar)    
 class UserProfile(models.Model):
     name = models.CharField(max_length=100)
     birthday = models.DateField()
@@ -25,3 +28,4 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.name
+    
