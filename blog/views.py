@@ -82,7 +82,7 @@ def search_blogs(request):
 '''
 
 # Handles form submission and validation for adding a new blog. Requires user login.
-# Yeni bir blog eklemek için form işlemleri ve doğrulama yapar. Kullanıcının giriş yapmasını gerektirir 
+# Yeni bir blog eklemek için form işlemleri ve doğrulama yapar. Kullanıcının giriş yapmasını gerektirir. 
 # @login_required
 def add_blog(request):
     if request.method == "POST":
