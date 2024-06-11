@@ -5,7 +5,7 @@
             <img src="{{ blog.image.url }}" alt="Image" class="img-fluid">
         </div>
         <span class="position-absolute tm-new-badge">New</span>
-        <h2 class="tm-pt-20 tm-color-primary tm-post-title">{{ blog.title|slice:"35" }}</h2>
+        <h2 class="tm-pt-20 tm-color-primary tm-post-title">{{ blog.title|truncatechars:35 }}</h2>
     </a>
     <p class="tm-pt-30">
         {{ blog.description|striptags|slice:"100"|add:"..." }}
